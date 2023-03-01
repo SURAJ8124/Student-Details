@@ -7,6 +7,8 @@ const Data = ({students,onDelete,handleSearch,searchValue}) => {
   return (
     <>
 
+
+
 {/* <input className='new' type="search" placeholder='Search' value={searchValue}onChange={handleSearch}></input> */}
      <Table striped bordered hover size="sm">
       <thead>
