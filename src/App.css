@@ -1,0 +1,75 @@
+.first-box{
+  border: 5px solid black;
+  height: auto;
+  width: 700px;
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-left: 30px;
+}
+.second-box{
+  border: 5px solid black;
+  height: auto;
+  width: 800px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 0px;
+  margin-bottom: 3000px;
+}
+.heading{
+    text-align: center;
+}
+
+.textfield_lable{
+    margin-left: 20px;
+}
+.text-field-division{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 70px;
+  padding-right: 70px;
+  font-size: 20px;
+  padding-bottom: 5px; 
+}
+.text-field-class{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-size: 20px;
+  padding-bottom: 5px; 
+}
+.text-field-gender{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-size: 20px;
+  padding-bottom: 5px;  
+}
+.text-field{
+   font-size: 20px; 
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  border: 2px solid black;
+  text-align: center;
+}
+.col-4{
+  font-size: 25px;
+  margin-top: 50px;
+}
+.col-5{
+  margin-top: 50px;
+  size: 200px;
+}
+
+.button{
+ font-size: 30px;
+ background-color: aqua;
+ margin-top: 70px;
+ margin-left: 120px;
+ display: inline-flex;
+
+}
+
