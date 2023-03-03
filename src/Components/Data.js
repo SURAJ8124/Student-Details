@@ -9,7 +9,7 @@ const Data = ({students,onDelete,handleSearch,searchValue}) => {
 
 
 
-{/* <input className='new' type="search" placeholder='Search' value={searchValue}onChange={handleSearch}></input> */}
+<input className='new' type="search" placeholder='Search' value={searchValue}onChange={handleSearch}></input>
      <Table striped bordered hover size="sm">
       <thead>
         <tr>

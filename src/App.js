@@ -145,16 +145,19 @@ function App() {
 
 
   const handleSearch = (e) => {
+    console.log(e.target.value,"value1")
+
     if(e.target.value===''){
       setStudents(foundNames)
     }
     else{
-      const filterResult= foundNames.filter(item=> item.email.toLowerCase().includes(e.target.value.toLowerCase())||  item.author.toLowerCase().includes(e.target.value.toLowerCase())
-       ||item.text.toLowerCase().includes(e.target.value.toLowerCase())
+      const filterResult= foundNames.filter(item=> item.email.toLowerCase().includes(e.target.value.toLowerCase())||  item.name.toLowerCase().includes(e.target.value.toLowerCase())
+       ||item.gender.toLowerCase().includes(e.target.value.toLowerCase())|| item.div.toLowerCase().includes(e.target.value.toLowerCase())
       )
       setStudents(filterResult)   
     }
     setSearchValue(e.target.value)
+    console.log(e.target.value,"value2")
   };
   return (
    <>

@@ -95,7 +95,7 @@ const Form = ({ onAdd }) => {
         <div className='container-fluid mt-3'>
           <div className="row">
             <div className='col-1'></div>
-            <label for="division-select" className='col-4'>Select  division:</label>
+            <label className='col-4'>Select  division:</label>
               <div className='col-5'>
             <select 
            className='text-field-division'
@@ -118,7 +118,7 @@ const Form = ({ onAdd }) => {
         <div className='container-fluid mt-3'>
           <div className="row">
             <div className='col-1'></div>
-            <label for="gender-select" className='col-4'>Select  gender:</label>
+            <label  className='col-4'>Select  gender:</label>
             <div  className='col-5'>
             <select
               className='text-field-gender'
