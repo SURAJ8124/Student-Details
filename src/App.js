@@ -6,130 +6,30 @@ import "./App.css"
 import Heading from './Components/Heading';
 import Form from './Components/Form';
 import Data from './Components/Data';
-import { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 
 function App() {
 
   const [searchValue, setSearchValue] = useState('');
   const [foundNames, setFoundNames] = useState([]);
-  const [students,setStudents]=useState([
-    {
-      id: 1,
-      name: 'John Doe',
-      phone: '123-456-7890',
-      email: 'john.doe@example.com',
-      gender: 'male',
-      div: 'A',
-      classs: '10th',
-      dob: '1999-01-01'
+  const [students,setStudents]=useState([])
+
+  useEffect(() => {
+    const fetchData =  () => {
+        fetch("http://localhost:8080/api/students")
+        .then(response=>response.json())
+        .then(json=>
+          {setStudents(json)
+      })
+          .catch(e=>{
+            console.log("error",e)
+          })
       
-    },
-    {
-      id:2,
-      name: 'Jane Doe',
-      phone: '555-555-5555',
-      email: 'jane.doe@example.com',
-      gender: 'female',
-      div: 'B',
-      classs: '12th',
-      dob: '2001-02-15'
-    },
-    {  id:3,
-      name: 'Bob Smith',
-      phone: '555-123-4567',
-      email: 'bob.smith@example.com',
-      gender: 'male',
-      div: 'C',
-      classs: '11th',
-      dob: '2000-05-20'
-    },
-    { id:4,
-      name: 'Alice Jones',
-      phone: '123-555-7890',
-      email: 'alice.jones@example.com',
-      gender: 'female',
-      div: 'A',
-      classs: '10th',
-      dob: '2002-08-10'
-    },
-    {
-      id:5,
-      name: 'David Lee',
-      phone: '555-789-1234',
-      email: 'david.lee@example.com',
-      gender: 'male',
-      div: 'B',
-      classs: '11th',
-      dob: '2003-03-25'
-    },
-    {  id:6,
-      name: 'Emily Chen',
-      phone: '555-321-4567',
-      email: 'emily.chen@example.com',
-      gender: 'female',
-      div: 'C',
-      classs: '12th',
-      dob: '2001-11-17'
-    },
-    {  id:7,
-      name: 'Frank Wang',
-      phone: '123-789-5555',
-      email: 'frank.wang@example.com',
-      gender: 'male',
-      div: 'A',
-      classs: '10th',
-      dob: '2004-02-06'
-    },
-    {   id:8,
-      name: 'Grace Kim',
-      phone: '555-789-4567',
-      email: 'grace.kim@example.com',
-      gender: 'female',
-      div: 'B',
-      classs: '11th',
-      dob: '2002-05-12'
-    },
-    {  id:9,
-      name: 'Henry Park',
-      phone: '555-123-7890',
-      email: 'henry.park@example.com',
-      gender: 'male',
-      div: 'C',
-      classs: '12th',
-      dob: '2000-12-31'
-    },
-    { 
-      id:10,
-      name: 'Isabella Davis',
-      phone: '123-456-5555',
-      email: 'isabella.davis@example.com',
-      gender: 'female',
-      div: 'A',
-      classs: '10th',
-      dob: '2003-09-22'
-    },
-    {  id:11,
-      name: 'Jack Brown',
-      phone: '555-456-1234',
-      email: 'jack.brown@example.com',
-      gender: 'male',
-      div: 'B',
-      classs: '11th',
-      dob: '2001-07-04'
-    },
-    {  id:12,
-      name: 'Kelly Johnson',
-      phone: '555-789-3210',
-      email: 'kelly.johnson@example.com',
-      gender: 'female',
-      div: 'C',
-      classs: '11th',
-      dob: '2001-07-04'
-    } 
-
-  ])
-
+    };
+  
+    fetchData();
+  }, []);
+  console.log(students,"data")
   
   const addForm=(obj)=>{
    console.log(obj,"obj")
