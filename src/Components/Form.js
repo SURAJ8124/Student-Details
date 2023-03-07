@@ -1,10 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import { useState,useRef } from 'react';
+import { useState, useRef } from 'react';
 
 
 const Form = ({ onAdd }) => {
- 
+
   // state varibles for set the value of input fields
   const [student, setStudent] = useState('')
   const [s_class, setS_class] = useState('')
@@ -17,7 +17,7 @@ const Form = ({ onAdd }) => {
 
   const formRef = useRef(null);
   function handleReset() {
-    console.log(formRef,"formref")
+    console.log(formRef, "formref")
     formRef.current.reset();
     setStudent('')
     setS_class("")
@@ -27,7 +27,7 @@ const Form = ({ onAdd }) => {
     setGender('')
     setPhone_number('')
   }
-   // submit  function
+  // submit  function
   const onSubmit = (e) => {
     e.preventDefault()
     onAdd({ student, s_class, div, gender, date, email, phone_number })
@@ -39,12 +39,12 @@ const Form = ({ onAdd }) => {
     setGender('')
     setPhone_number('')
   }
-  
+
 
   return (
     <>
       <form onSubmit={onSubmit} ref={formRef} >
-    {/* first student input field */}
+        {/* first student input field */}
         <div className='container-fluid mt-3'>
           <div className="row">
             <div className='col-1'></div>
@@ -69,7 +69,7 @@ const Form = ({ onAdd }) => {
               <label >Select a class :</label>
             </div>
             <div className='col-5'>
-              <select   className='text-field-class'
+              <select className='text-field-class'
                 id="s_class"
                 value={s_class}
                 onChange={(event) => setS_class(event.target.value)} >
@@ -96,18 +96,18 @@ const Form = ({ onAdd }) => {
           <div className="row">
             <div className='col-1'></div>
             <label className='col-4'>Select  division:</label>
-              <div className='col-5'>
-            <select 
-           className='text-field-division'
-            id="division-select" name="division" 
-            value={div}
-              onChange={(e) => setDiv(e.target.value)}>
-              <option value="">Select a division</option>
-              <option value="A">Division A</option>
-              <option value="B">Division B</option>
-              <option value="C">Division C</option>
-              <option value="D">Division D</option>
-            </select>
+            <div className='col-5'>
+              <select
+                className='text-field-division'
+                id="division-select" name="division"
+                value={div}
+                onChange={(e) => setDiv(e.target.value)}>
+                <option value="">Select a division</option>
+                <option value="A">Division A</option>
+                <option value="B">Division B</option>
+                <option value="C">Division C</option>
+                <option value="D">Division D</option>
+              </select>
             </div>
             <div className='col-1' >   </div>
           </div>
@@ -118,17 +118,17 @@ const Form = ({ onAdd }) => {
         <div className='container-fluid mt-3'>
           <div className="row">
             <div className='col-1'></div>
-            <label  className='col-4'>Select  gender:</label>
-            <div  className='col-5'>
-            <select
-              className='text-field-gender'
-              id="gender"
-              value={gender}
-              onChange={(event) => setGender(event.target.value)}>
-              <option value="">Select gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
+            <label className='col-4'>Select  gender:</label>
+            <div className='col-5'>
+              <select
+                className='text-field-gender'
+                id="gender"
+                value={gender}
+                onChange={(event) => setGender(event.target.value)}>
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
             </div>
             <div className='col-1'></div>
           </div>
@@ -141,12 +141,12 @@ const Form = ({ onAdd }) => {
             <div className='col-1'></div>
             <lable className='col-4' >Date of birth :</lable>
             <div className='col-5'>
-            <input
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className='text-field-division'
-              type="date"
-              placeholder='Date of birth' /></div>
+              <input
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className='text-field-division'
+                type="date"
+                placeholder='Date of birth' /></div>
             <div className='col-1'></div>
           </div>
         </div>
@@ -158,13 +158,13 @@ const Form = ({ onAdd }) => {
             <div className='col-1'></div>
             <lable className='col-4'>Email Address :</lable>
             <div className='col-5'>
-            <input
-              className='text-field'
-              type="email"
-              placeholder='Email Address'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            /></div>
+              <input
+                className='text-field'
+                type="email"
+                placeholder='Email Address'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              /></div>
             <div className='col-1'></div>
           </div>
         </div>
@@ -177,13 +177,13 @@ const Form = ({ onAdd }) => {
             <div className='col-1'></div>
             <lable className='col-4'>Phone No :</lable>
             <div className='col-5'>
-            <input
-            className='text-field'
-              value={phone_number}
-              onChange={(e) => setPhone_number(e.target.value)}
-              type="text"
-              placeholder='Phone No' />
-              </div>
+              <input
+                className='text-field'
+                value={phone_number}
+                onChange={(e) => setPhone_number(e.target.value)}
+                type="text"
+                placeholder='Phone No' />
+            </div>
             <div className='col-1'></div>
           </div>
         </div>
