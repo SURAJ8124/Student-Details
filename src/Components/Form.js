@@ -5,39 +5,46 @@ import { useState, useRef } from 'react';
 
 const Form = ({ onAdd }) => {
 
+  // <td>{student.stud_name}</td>
+  // <td>{student.stud_phone}</td>
+  // <td>{student.stud_email}</td>
+  // <td>{student.stud_gender}</td>
+  // <td>{student.stud_div}</td>
+  // <td>{student.stud_classs}</td>
+  // <td>{student.stud_dob}</td>
   // state varibles for set the value of input fields
-  const [student, setStudent] = useState('')
-  const [s_class, setS_class] = useState('')
-  const [div, setDiv] = useState('')
-  const [gender, setGender] = useState('');
-  const [date, setDate] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone_number, setPhone_number] = useState('')
+  const [stud_name, setStud_name] = useState('')
+  const [stud_classs, setStud_classs] = useState('')
+  const [stud_div, setStud_div] = useState('')
+  const [stud_gender, setStud_gender] = useState('');
+  const [stud_dob, setStud_dob] = useState('')
+  const [stud_email, setStud_email] = useState('')
+  const [stud_phone, setStud_phone] = useState('')
 
 
   const formRef = useRef(null);
   function handleReset() {
     console.log(formRef, "formref")
     formRef.current.reset();
-    setStudent('')
-    setS_class("")
-    setDate('')
-    setDiv('')
-    setEmail('')
-    setGender('')
-    setPhone_number('')
+    setStud_name('')
+    setStud_classs("")
+    setStud_dob("")
+    setStud_div('')
+    setStud_email('')
+    setStud_gender('')
+    setStud_phone('')
   }
   // submit  function
   const onSubmit = (e) => {
     e.preventDefault()
-    onAdd({ student, s_class, div, gender, date, email, phone_number })
-    setStudent('')
-    setS_class("")
-    setDate('')
-    setDiv('')
-    setEmail('')
-    setGender('')
-    setPhone_number('')
+    onAdd({ stud_name, stud_classs, stud_div, stud_gender, stud_dob, stud_email, stud_phone })
+    setStud_name('')
+    setStud_classs("")
+    setStud_dob("")
+    setStud_div('')
+    setStud_email('')
+    setStud_gender('')
+    setStud_phone('')
   }
 
 
@@ -54,8 +61,8 @@ const Form = ({ onAdd }) => {
               <input className='text-field'
                 type="text"
                 placeholder='Student Name'
-                value={student}
-                onChange={(e) => setStudent(e.target.value)} />
+                value={stud_name}
+                onChange={(e) => setStud_name(e.target.value)} />
             </div>
             <div className='col-1' >   </div>
           </div>
@@ -71,8 +78,8 @@ const Form = ({ onAdd }) => {
             <div className='col-5'>
               <select className='text-field-class'
                 id="s_class"
-                value={s_class}
-                onChange={(event) => setS_class(event.target.value)} >
+                value={stud_classs}
+                onChange={(event) => setStud_classs(event.target.value)} >
                 <option value="" >Select a class</option>
                 <option value="1">Class 1</option>
                 <option value="2">Class 2</option>
@@ -100,8 +107,8 @@ const Form = ({ onAdd }) => {
               <select
                 className='text-field-division'
                 id="division-select" name="division"
-                value={div}
-                onChange={(e) => setDiv(e.target.value)}>
+                value={stud_div}
+                onChange={(e) => setStud_div(e.target.value)}>
                 <option value="">Select a division</option>
                 <option value="A">Division A</option>
                 <option value="B">Division B</option>
@@ -123,8 +130,8 @@ const Form = ({ onAdd }) => {
               <select
                 className='text-field-gender'
                 id="gender"
-                value={gender}
-                onChange={(event) => setGender(event.target.value)}>
+                value={stud_gender}
+                onChange={(event) => setStud_gender(event.target.value)}>
                 <option value="">Select gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -142,8 +149,8 @@ const Form = ({ onAdd }) => {
             <lable className='col-4' >Date of birth :</lable>
             <div className='col-5'>
               <input
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
+                value={stud_dob}
+                onChange={(e) => setStud_dob(e.target.value)}
                 className='text-field-division'
                 type="date"
                 placeholder='Date of birth' /></div>
@@ -162,8 +169,8 @@ const Form = ({ onAdd }) => {
                 className='text-field'
                 type="email"
                 placeholder='Email Address'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={stud_email}
+                onChange={(e) => setStud_email(e.target.value)}
               /></div>
             <div className='col-1'></div>
           </div>
@@ -179,8 +186,8 @@ const Form = ({ onAdd }) => {
             <div className='col-5'>
               <input
                 className='text-field'
-                value={phone_number}
-                onChange={(e) => setPhone_number(e.target.value)}
+                value={stud_phone}
+                onChange={(e) => setStud_phone(e.target.value)}
                 type="text"
                 placeholder='Phone No' />
             </div>

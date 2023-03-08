@@ -15,37 +15,61 @@ function App() {
   const [students, setStudents] = useState([])
 
   useEffect(() => {
-    const fetchData = () => {
-      fetch("http://localhost:8080/api/students")
-        .then(response => response.json())
-        .then(json => {
-          setStudents(json)
-        })
-        .catch(e => {
-          console.log("error", e)
-        })
-
-    };
-
     fetchData();
-  }, []);
-  console.log(students, "data")
+  }, [students]);
+
+
+
+  const fetchData = () => {
+    fetch("http://localhost:8080/api/students")
+      .then(response => response.json())
+      .then(json => {
+        setStudents(json)
+      })
+      .catch(e => {
+        console.log("error", e)
+      })
+
+  };
+
+
+
 
   const addForm = (obj) => {
     console.log(obj, "obj")
-    const id = Math.floor(Math.random() * 10000) + 1
-    console.log(id, "id")
-    const newObj = { id, ...obj }
-    setStudents([...students, newObj])
+    const stud_id = Math.floor(Math.random() * 10000) + 1
+    console.log(stud_id, "id")
+    const newObj = { stud_id, ...obj }
+    console.log(newObj, "newObj")
+    fetch(`http://localhost:8080/api/students`, {
+      method: 'POST',
+      headers:{
+        'Acceptt':'application/json',
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(newObj)
+    }).then((resp)=>{
+      console.log(resp,"resp")
+    })
+    fetchData();
   }
+    
+
+
+
 
   const deleteStudent = (id) => {
-    setStudents(students.filter((student) => student.id !== id))
+    fetch(`http://localhost:8080/api/students/${id}`, {
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(json => {
+    })
+    fetchData();
   }
 
 
   const handleSearch = (e) => {
-    console.log(e.target.value, "value1")
 
     if (e.target.value === '') {
       setStudents(foundNames)
