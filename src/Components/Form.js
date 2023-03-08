@@ -56,7 +56,7 @@ const Form = ({ onAdd }) => {
           <div className="row">
             <div className='col-1'></div>
             <div className='col-4'>
-              <lable >Student Name :</lable></div>
+              <lable >Student Name: </lable></div>
             <div className='col-5'>
               <input className='text-field'
                 type="text"
