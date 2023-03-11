@@ -1,30 +1,24 @@
 .first-box {
-  background-image: url(./Images/pexels-henry-&-co-1939485.jpg);
-  image-resolution: 2rem;
   border: 5px solid black;
-  height: auto;
-  /* width: auto; */
- width: 37rem;
-  /* padding-left: 10px;
-  margin-left: 10px;
-  margin-left: 30px; */
-  background-color: rgb(230, 203, 84);
+  height: 900px,;
+  width: 50rem;
+  background-color: rgb(213, 241, 110);
 }
 .main{
  background-color: skyblue;
- /* background-image: url(./Images/pexels-r); */
 
 }
 
 .second-box {
   border: 5px solid black;
+  margin-top: 2rem;
   height: auto;
-  /* width: 35rem; */
+  width: 810px;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 0px;
   margin-bottom: 3000px;
-  background-image: url(./Images/pexels-henry-&-co-1939485.jpg);
+  background-color: rgb(213, 241, 110);
 }
 
 .heading {
@@ -70,7 +64,7 @@
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
   border: 2px solid black;
   text-align: center;
 }
@@ -87,9 +81,17 @@
 
 .button {
   font-size: 30px;
-  background-color: aqua;
-  margin-top: 70px;
-  margin-left: 120px;
+  background-color: rgb(83, 212, 83);
+  margin-top: 50px;
+  margin-left: 173px;
   display: inline-flex;
 
+}
+.tables{
+  border: solid black;
+}
+.show-button{
+  font-size: 20px;  
+margin-left: 600px;
+background-color: rgb(83, 212, 83);
 }

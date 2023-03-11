@@ -7,12 +7,14 @@ import Heading from './Components/Heading';
 import Form from './Components/Form';
 import Data from './Components/Data';
 import React, { useState, useEffect } from 'react';
+import { Button } from 'bootstrap';
 
 function App() {
 
   const [searchValue, setSearchValue] = useState('');
   const [foundNames, setFoundNames] = useState([]);
   const [students, setStudents] = useState([])
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     fetchData();
@@ -43,17 +45,17 @@ function App() {
     console.log(newObj, "newObj")
     fetch(`http://localhost:8080/api/students`, {
       method: 'POST',
-      headers:{
-        'Acceptt':'application/json',
-        'Content-Type':'application/json'
+      headers: {
+        'Acceptt': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body:JSON.stringify(newObj)
-    }).then((resp)=>{
-      console.log(resp,"resp")
+      body: JSON.stringify(newObj)
+    }).then((resp) => {
+      console.log(resp, "resp")
     })
     fetchData();
   }
-    
+
 
 
 
@@ -62,12 +64,15 @@ function App() {
     fetch(`http://localhost:8080/api/students/${id}`, {
       method: 'DELETE',
     })
-    .then(response => response.json())
-    .then(json => {
-    })
+      .then(response => response.json())
+      .then(json => {
+      })
     fetchData();
   }
 
+  const onClick = () => {
+    setShow(!show)
+  }
 
   const handleSearch = (e) => {
 
@@ -91,19 +96,21 @@ function App() {
       <div className='main'>
         <Container>
           <Row>
-            <Col>
-              <div className='first-box'>
+            {!show && <Col>
+              <div className='second-box'>
                 <Heading heading='Student Details' />
+                <button onClick={onClick} className="show-button">show details</button>
                 <Form onAdd={addForm} />
               </div>
-            </Col>
-            <Col>
+            </Col>}
+            {show && <Col>
               <div className='second-box'  >
-                <Heading heading='Admin data' />
+                <Heading heading='Student data' />
+                <button onClick={onClick} className="show-button">show details</button>
                 {students.length > 0 ? <Data students={students} onDelete={deleteStudent}
                   searchValue={searchValue} handleSearch={handleSearch} /> : "No Data"}
               </div>
-            </Col>
+            </Col>}
           </Row>
         </Container>
       </div>
